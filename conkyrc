@@ -1,0 +1,115 @@
+conky.config = {
+--## ATTENTION: CHANGE THE NEXT VALUE TO YOUR NEEDS, this is the only file needing edit these value, other configuration files are parametrized ###
+
+-- Defining Template used in graph and fixed object monitoring
+--# Network Interface to monitor
+--template1 wlp3s0
+--# Custom Folder
+--template2 /root
+--# Share Folder
+--template3 /share
+
+	background = true,
+	update_interval = 1.0,
+
+--cpu_avg_samples 1
+--net_avg_samples 2
+	temperature_unit = 'celsius',
+
+	double_buffer = true,
+	no_buffers = true,
+	text_buffer_size = 2048,
+	override_utf8_locale = true,
+	use_xft = true,
+--xftfont caviar dreams:size=10
+	font = 'Bitstream Vera Sans Mono:size=10',
+	xftalpha = 0.5,
+	uppercase = false,
+
+	gap_x = 10,
+	gap_y = 35,
+	minimum_width = 300, minimum_height = 8,
+	maximum_width = 350,
+
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_transparent = false,
+	own_window_argb_visual = true,
+	own_window_argb_value = 120,
+	own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
+
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+	alignment = 'top_right',
+--ximerama_head = 0
+
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+	show_graph_range = true,
+
+	-- Gray
+	color1 = '#777777',
+	-- Red
+	color2 = '#CD5C5C',
+	-- White
+	color3 = '#FFFFFF',
+	-- Green
+	color4 = '#20B2AA',
+	-- Orange
+	color5 = '#FFA07A',
+	--DeepSkyBlue
+	color6 = '#00BFFF',
+	--PowderBlue
+	color7 = '#B0E0E6',
+
+
+--Loading lua script for drawning rings
+--lua_load /root/Documents/Conky Themes/conkycyannet_tar_by_dvdred-daiimlg/CyanNet/seamod_rings.lua
+--lua_draw_hook_post main
+
+--# System information using conky capabilities
+
+};
+
+conky.text = [[
+${color4}┌────────────────────┐
+│${offset 5}${font Monospace:normal:size=10}${color7}SYSTEM: $nodename${offset 3}${color4}   ├────────────────────┐
+${color4}└────────────────────┘                    │
+${offset 15}${font Monospace:normal:size=10}${color6}User: ${color3}${execi 5000 whoami}${color4}${offset 9}────────────────────────────┬─┤
+${offset 15}${font Monospace:normal:size=10}${color6}Distro: ${color3}${exec awk -F'=' '/DESCRIPTION/ {print $2}' /etc/lsb-release |sed 's/"//g'} ${machine}${color4}${offset 9}──────────┬─┘ │
+${offset 15}${font Monospace:normal:size=10}${color6}Version: ${color3}${exec awk -F'=' '/DISTRIB_RELEASE=/ {printf $2" "} /CODENAME/ {print $2}' /etc/lsb-release}${color4}${offset 9}─────────────────┬┘   │                
+${offset 15}${font Monospace:normal:size=10}${color6}Kernel: ${color3}${kernel}${color4}${offset 9}────────────┬┘    │                
+${offset 15}${font Monospace:normal:size=10}${color6}Uptime: ${color3}${uptime_short}${color4}${alignr}${offset 3}─────────────────┬┘     │ 
+${offset 15}${font Monospace:normal:size=10}${color6}Date: ${color3}${time %a, %d de %b de %Y}${color4}${offset 9}───┬┘      │                       
+${offset 15}${font Monospace:normal:size=10}${color6}Time: ${color3}${time %T}${color4}${offset 9}─────────────────┘       │                
+${offset 32}┌─────────────────────────────────────┘
+# Showing CPU Graph
+#${offset 120}${cpugraph 40,183 666666 666666}${voffset -25}
+ ┌──┴──┐┌────────── ${font Monospace:normal:size=10}${color6}CPU Temp: ${color3}${hwmon 0 temp 1}°C
+${color4}┌┤ ${font Monospace:normal:size=10}${color7}CPU${color4} ├┤
+│└─────┘└────────── ${font Monospace:normal:size=10}${color3}$cpu% ${color6}$cpubar
+${color4}└─────────┐ 
+#Showing memory part with TOP 5
+       ┌──┴──┐┌──── ${font Monospace:normal:size=10}${color6}Usage: ${color3}${mem}/${memmax}${color1}
+${color4}${offset 40}┌─┤${offset 9}${font Monospace:normal:size=10}${color7}MEM${color4}${offset 7}├┤
+     │ └─────┘└──── ${font Monospace:normal:size=10}${color3}$memperc%${color1} ${color6}$membar
+${color4}  ┌──┴──────────┐
+┌┬┤${offset 9}${font Monospace:normal:size=10}${color7}FILE SYSTEM${color4}${offset 7}│
+${color4}││└─────────────┘ 
+${color4}│└─┬─ ${font Monospace:normal:size=10}${color6}ROOT: ${color3}${fs_used /}/${fs_size /}  ${color6}${fs_bar /}${color2}
+${color4}│  └─┬─ ${font Monospace:normal:size=10}${color6}HOME: ${color3}${fs_used /home}/${fs_size /home} ${color6}${fs_bar /home}${color2}
+${color4}│    └─── ${font Monospace:normal:size=10}${color6}SWAP: ${color3}${swap}/${swapmax} ${color6}${swapbar}${color2}
+${color4}│      ┌─────┐
+${color4}├┬─────┤${offset 9}${font Monospace:normal:size=10}${color7}MPD${color4}${offset 7}│
+${color4}││     └─────┘
+${color4}│└┬─────── ${font Monospace:normal:size=10}${color6}Mpd: ${color3}${mpd_status}${color2}
+${color4}│ └┬────── ${font Monospace:normal:size=10}${color3}${mpd_title}${color2}
+${color4}│  ├────── ${font Monospace:normal:size=10}${color3}${mpd_elapsed} / ${mpd_length} - Rnd:${mpd_random} Rpt:${mpd_repeat}
+${color4}│  └────── ${color6}${mpd_bar}
+${color4}│┌───────┐
+${color4}└┤${offset 9}${font Monospace:normal:size=10}${color7}OTHER${color4}${offset 7}├┐
+${color4} └──────┬┘├─ ${font Monospace:normal:size=10}${color6}Number of Updates: ${color3}${execpi 1800 checkupdates | wc -l}
+${color4}${offset 64}└─┴─${font Monospace:normal:size=10}${color3}${execpi 900 weather.sh}
+]];

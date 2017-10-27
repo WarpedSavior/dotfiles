@@ -1,0 +1,6 @@
+#!/bin/bash
+#Script to convert flac to mp3 320 kbps
+
+for a in ./*.flac; do
+  ffmpeg -i "$a" -acodec libmp3lame -ab 320k "${a[@]/%flac/mp3}"
+done

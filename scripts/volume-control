@@ -1,0 +1,75 @@
+#!/bin/bash
+
+# You can call this script like this:
+# $./volume.sh up
+# $./volume.sh down
+# $./volume.sh mute
+
+icon_name=""
+
+function get_volume {
+    pactl list sinks | grep '^[[:space:]]Volume:' | cut -d '/' -f 2 | cut -d '%' -f 1
+}
+
+function is_mute {
+    pactl list sinks | grep 'Mute' | grep yes > /dev/null
+}
+
+function send_notification {
+    volume=`get_volume`
+    # Make the bar with the special character ─ (it's not dash -)
+    # https://en.wikipedia.org/wiki/Box-drawing_character
+
+    volume_bar=$volume
+
+    # Make bar stop at 100% volume
+    if [ "$volume" -gt "100" ]; then
+	volume_bar="100"
+    fi
+
+    bar=$(seq -s "─" $(($volume_bar / 5)) | sed 's/[0-9]//g')
+    
+    if [ "$volume" -lt "33" ]; then
+	icon_name="audio-volume-low"
+    else
+	if [ "$volume" -lt "67" ]; then
+		icon_name="audio-volume-medium"
+	else
+		icon_name="audio-volume-high"
+	fi
+    fi
+
+    # Send the notification
+    dunstify -t 8 -r 2593 -u normal -i $icon_name "$volume%  $bar"
+}
+
+case $1 in
+    up)
+	volume=`get_volume`
+	if is_mute ; then
+	    pactl set-sink-mute 0 toggle
+	fi
+	if [ "$volume" -lt "151" ]; then
+		# Set the volume on (if it was muted)
+		# Up the volume (+ 5%)
+		pactl set-sink-volume 0 +$2%
+		send_notification
+	fi
+	;;
+    down)
+	if is_mute ; then
+	    pactl set-sink-mute 0 toggle
+	fi
+	pactl set-sink-volume 0 -$2%
+	send_notification
+	;;
+    mute)
+    	# Toggle mute
+	pactl set-sink-mute 0 toggle
+	if is_mute ; then
+	    dunstify -i audio-volume-muted -t 8 -r 2593 -u normal "Muted"
+	else
+	    send_notification
+	fi
+	;;
+esac
