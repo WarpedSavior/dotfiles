@@ -188,7 +188,7 @@ ac_disconnected_cmd = dunstify -t 1000 -r 2591 -u low "Descargando"
 #-------------------------------------
 # Executor 1
 execp = new
-execp_command = ~/.config/tint2/unleashed/.executor/now-playing
+execp_command = ~/.config/tint2/unleashed/executor/now-playing
 execp_interval = 4
 execp_has_icon = 0
 execp_cache_icon = 1
@@ -210,7 +210,7 @@ execp_icon_h = 0
 #-------------------------------------
 # Executor 2
 execp = new
-execp_command = /home/jos/.config/tint2/unleashed/.executor/weather
+execp_command = /home/jos/.config/tint2/unleashed/executor/weather
 execp_interval = 900
 execp_has_icon = 0
 execp_cache_icon = 1

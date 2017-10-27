@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=YouTube
+Type=Link
+URL=http://youtube.com
+Icon=/home/jos/.config/tint2/unleashed/.bookmarks-dot/icons/youtube.png
+Exec=env GTK_THEME=Adwaita:light firefox-nightly -new-tab https://youtube.com
