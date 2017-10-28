@@ -4,7 +4,7 @@
 # $./printscreen.sh (window/windowclip/select/selectclip/allclip)
 
 function send_notification {
-	dunstify -t 2000 -r 2590 -u normal "Se ha guardado la captura en ~/scrot/"
+	dunstify -t 2000 -r 2589 -u normal "Se ha guardado la captura en ~/scrot/"
 }
 
 case $1 in
@@ -16,6 +16,7 @@ case $1 in
 	windowclip)
 		mkdir -p ~/scrot
 		scrot -ub 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/scrot && xclip -selection clipboard -t image/png -i ~/scrot/`ls -1 -t ~/scrot | head -1`'
+		dunstify -t 2000 -r 2590 -u normal "Captura copiada al portapapeles"
 		send_notification
 		;;
 	select)
@@ -26,11 +27,13 @@ case $1 in
 	selectclip)
 		mkdir -p ~/scrot
 		scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/scrot && xclip -selection clipboard -t image/png -i ~/scrot/`ls -1 -t ~/scrot | head -1`' 
+		dunstify -t 2000 -r 2590 -u normal "Captura copiada al portapapeles"
 		send_notification
 		;;
 	allclip)
 		mkdir -p ~/scrot
 		scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/scrot && xclip -selection clipboard -t image/png -i ~/scrot/`ls -1 -t ~/scrot | head -1`'
+		dunstify -t 2000 -r 2590 -u normal "Captura copiada al portapapeles"
 		send_notification
 		;;
 	*)

@@ -316,9 +316,19 @@
         <command>printscreen window</command>
       </action>
     </keybind>
+    <keybind key="C-W-Print">
+      <action name="Execute">
+        <command>printscreen windowclip</command>
+      </action>
+    </keybind>
     <keybind key="S-Print">
       <action name="Execute">
         <command>printscreen select</command>
+      </action>
+    </keybind>
+    <keybind key="S-W-Print">
+      <action name="Execute">
+        <command>printscreen selectclip</command>
       </action>
     </keybind>
     <keybind key="C-A-t">

@@ -3,5 +3,5 @@ Encoding=UTF-8
 Name=9gag
 Type=Link
 URL=http://9gag.com
-Icon=/home/jos/.config/tint2/unleashed/.bookmarks-dot/icons/9gag.png
+Icon=/home/jos/dotfiles/config/tint2/unleashed/bookmarks-dot/icons/9gag.png
 Exec=env GTK_THEME=Adwaita:light firefox-nightly -new-tab https://9gag.com

@@ -117,12 +117,12 @@ launcher_icon_asb = 100 0 0
 launcher_icon_theme_override = 0
 startup_notifications = 1
 launcher_tooltip = 1
-launcher_item_app = ~/.config/tint2/unleashed/bookmarks-dot/youtube.desktop
-launcher_item_app = ~/.config/tint2/unleashed/bookmarks-dot/twitter.desktop
-launcher_item_app = ~/.config/tint2/unleashed/bookmarks-dot/archlinux.desktop
-launcher_item_app = ~/.config/tint2/unleashed/bookmarks-dot/github.desktop
-launcher_item_app = ~/.config/tint2/unleashed/bookmarks-dot/reddit.desktop
-launcher_item_app = ~/.config/tint2/unleashed/bookmarks-dot/9gag.desktop
+launcher_item_app = ~/dotfiles/config/tint2/unleashed/bookmarks-dot/youtube.desktop
+launcher_item_app = ~/dotfiles/config/tint2/unleashed/bookmarks-dot/twitter.desktop
+launcher_item_app = ~/dotfiles/config/tint2/unleashed/bookmarks-dot/archlinux.desktop
+launcher_item_app = ~/dotfiles/config/tint2/unleashed/bookmarks-dot/github.desktop
+launcher_item_app = ~/dotfiles/config/tint2/unleashed/bookmarks-dot/reddit.desktop
+launcher_item_app = ~/dotfiles/config/tint2/unleashed/bookmarks-dot/9gag.desktop
 
 #-------------------------------------
 # Clock

@@ -3,5 +3,5 @@ Encoding=UTF-8
 Name=Reddit
 Type=Link
 URL=http://reddit.com
-Icon=/home/jos/.config/tint2/unleashed/.bookmarks-dot/icons/reddit.png
+Icon=/home/jos/dotfiles/config/tint2/unleashed/bookmarks-dot/icons/reddit.png
 Exec=env GTK_THEME=Adwaita:light firefox-nightly -new-tab https://reddit.com

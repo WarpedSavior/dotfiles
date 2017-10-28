@@ -111,5 +111,5 @@ ${color4}│  └────── ${color6}${mpd_bar}
 ${color4}│┌───────┐
 ${color4}└┤${offset 9}${font Monospace:normal:size=10}${color7}OTHER${color4}${offset 7}├┐
 ${color4} └──────┬┘├─ ${font Monospace:normal:size=10}${color6}Number of Updates: ${color3}${execpi 1800 checkupdates | wc -l}
-${color4}${offset 64}└─┴─${font Monospace:normal:size=10}${color3}${execpi 900 weather.sh}
+${color4}${offset 64}└─┴─${font Monospace:normal:size=10}${color3}${execpi 900 weather.sh conky}
 ]];
