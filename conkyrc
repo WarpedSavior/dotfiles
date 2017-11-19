@@ -35,7 +35,7 @@ conky.config = {
 	own_window_type = 'desktop',
 	own_window_transparent = false,
 	own_window_argb_visual = true,
-	own_window_argb_value = 120,
+	own_window_argb_value = 70,
 	own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
 
 	border_inner_margin = 0,
@@ -80,7 +80,7 @@ ${color4}└────────────────────┘     
 ${offset 15}${font Monospace:normal:size=10}${color6}User: ${color3}${execi 5000 whoami}${color4}${offset 9}────────────────────────────┬─┤
 ${offset 15}${font Monospace:normal:size=10}${color6}Distro: ${color3}${exec awk -F'=' '/DESCRIPTION/ {print $2}' /etc/lsb-release |sed 's/"//g'} ${machine}${color4}${offset 9}──────────┬─┘ │
 ${offset 15}${font Monospace:normal:size=10}${color6}Version: ${color3}${exec awk -F'=' '/DISTRIB_RELEASE=/ {printf $2" "} /CODENAME/ {print $2}' /etc/lsb-release}${color4}${offset 9}─────────────────┬┘   │                
-${offset 15}${font Monospace:normal:size=10}${color6}Kernel: ${color3}${kernel}${color4}${offset 9}────────────┬┘    │                
+${offset 15}${font Monospace:normal:size=10}${color6}Kernel: ${color3}${kernel}${color4}${offset 9}───────────┬┘    │                
 ${offset 15}${font Monospace:normal:size=10}${color6}Uptime: ${color3}${uptime_short}${color4}${alignr}${offset 3}─────────────────┬┘     │ 
 ${offset 15}${font Monospace:normal:size=10}${color6}Date: ${color3}${time %a, %d de %b de %Y}${color4}${offset 9}───┬┘      │                       
 ${offset 15}${font Monospace:normal:size=10}${color6}Time: ${color3}${time %T}${color4}${offset 9}─────────────────┘       │                
@@ -102,14 +102,10 @@ ${color4}│└─┬─ ${font Monospace:normal:size=10}${color6}ROOT: ${color3
 ${color4}│  └─┬─ ${font Monospace:normal:size=10}${color6}HOME: ${color3}${fs_used /home}/${fs_size /home} ${color6}${fs_bar /home}${color2}
 ${color4}│    └─── ${font Monospace:normal:size=10}${color6}SWAP: ${color3}${swap}/${swapmax} ${color6}${swapbar}${color2}
 ${color4}│      ┌─────┐
-${color4}├┬─────┤${offset 9}${font Monospace:normal:size=10}${color7}MPD${color4}${offset 7}│
-${color4}││     └─────┘
-${color4}│└┬─────── ${font Monospace:normal:size=10}${color6}Mpd: ${color3}${mpd_status}${color2}
-${color4}│ └┬────── ${font Monospace:normal:size=10}${color3}${mpd_title}${color2}
-${color4}│  ├────── ${font Monospace:normal:size=10}${color3}${mpd_elapsed} / ${mpd_length} - Rnd:${mpd_random} Rpt:${mpd_repeat}
-${color4}│  └────── ${color6}${mpd_bar}
-${color4}│┌───────┐
-${color4}└┤${offset 9}${font Monospace:normal:size=10}${color7}OTHER${color4}${offset 7}├┐
-${color4} └──────┬┘├─ ${font Monospace:normal:size=10}${color6}Number of Updates: ${color3}${execpi 1800 checkupdates | wc -l}
-${color4}${offset 64}└─┴─${font Monospace:normal:size=10}${color3}${execpi 900 weather.sh conky}
+${color4}└┬─────┤${offset 9}${font Monospace:normal:size=10}${color7}MPD${color4}${offset 7}│
+${color4} │     └─────┘
+${color4} └┬─────── ${font Monospace:normal:size=10}${color6}Mpd: ${color3}${mpd_status}${color2}
+${color4}  └┬────── ${font Monospace:normal:size=10}${color3}${mpd_title}${color2}
+${color4}   ├────── ${font Monospace:normal:size=10}${color3}${mpd_elapsed} / ${mpd_length} - Rnd:${mpd_random} Rpt:${mpd_repeat}
+${color4}   └────── ${color6}${mpd_bar}
 ]];

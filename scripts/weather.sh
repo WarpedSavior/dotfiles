@@ -17,10 +17,25 @@ WEATHER_TEMP=$(echo "${WEATHER_INFO}" | grep "Currently: " | awk -F ':' '{print 
 
 case $1 in
     conky)
+	#WEATHER_TODAY=$(echo "${WEATHER_INFO}" | grep "High:" | head -1 | awk -F '>' '{print $2}' | cut -d '&' -f 1)
+	#WEATHER_TOMORROW=$(echo "${WEATHER_INFO}" | grep "High:" | tail -1 | awk -F '>' '{print $2}' | cut -d '&' -f 1)
+	HIGH_TODAY=$(echo "${WEATHER_INFO}" | grep "High:" | head -1 | awk -F 'C' '{print $1}' | cut -d ' ' -f 2)
+	LOW_TODAY=$(echo "${WEATHER_INFO}" | grep "High:" | head -1 | awk -F 'C' '{print $2}' | cut -d ' ' -f 3)
+	STATUS_TODAY=$(echo "${WEATHER_INFO}" | grep "High:" | head -1 | awk -F 'C ' '{print $3}' | cut -d '&' -f 1)
+	HIGH_TOMORROW=$(echo "${WEATHER_INFO}" | grep "High:" | tail -1 | awk -F 'C' '{print $1}' | cut -d ' ' -f 2)
+	LOW_TOMORROW=$(echo "${WEATHER_INFO}" | grep "High:" | tail -1 | awk -F 'C' '{print $2}' | cut -d ' ' -f 3)
+	STATUS_TOMORROW=$(echo "${WEATHER_INFO}" | grep "High:" | tail -1 | awk -F 'C ' '{print $3}' | cut -d '&' -f 1)
+
 	if [[ "${WEATHER_MAIN}" ]]; then
-		echo "${WEATHER_TEMP}${SYMBOL_CELSIUS},${WEATHER_MAIN}"
+		echo "Weather Today:"
+		echo "              Max: ${HIGH_TODAY}, Min: ${LOW_TODAY}"
+		echo "              ${STATUS_TODAY}"
+		echo ""
+		echo "             Weather Tomorrow:"
+		echo "              Max: ${HIGH_TOMORROW}, Min: ${LOW_TOMORROW}"
+		echo "              ${STATUS_TOMORROW}"
 	else
-		echo " N/A${SYMBOL_CELSIUS}, N/A"
+		echo "N/A${SYMBOL_CELSIUS}"
 	fi
 	;;
     tray)
@@ -58,7 +73,7 @@ case $1 in
 	  	echo "${ICON_NIGHTLY}${WEATHER_TEMP}${SYMBOL_CELSIUS}"
 		echo ""
 	else
-		echo"N/A ${SYMBOL_CELSIUS}"
+		echo "N/A ${SYMBOL_CELSIUS}"
 		echo ""
 	fi
 	;;

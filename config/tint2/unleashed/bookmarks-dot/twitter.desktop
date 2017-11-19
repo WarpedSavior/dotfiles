@@ -4,4 +4,4 @@ Name=Twitter
 Type=Link
 URL=http://twitter.com
 Icon=/home/jos/dotfiles/config/tint2/unleashed/bookmarks-dot/icons/twitter.png
-Exec=env GTK_THEME=Adwaita:light firefox-nightly -new-tab https://twitter.com
+Exec=firefox -new-tab https://twitter.com

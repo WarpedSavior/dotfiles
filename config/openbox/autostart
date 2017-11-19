@@ -25,12 +25,15 @@ compton -b --config ~/.config/compton.conf &
 
 mpd &
 
-(sleep 5s && conky) &
+(sleep 3s && conky) &
+#conky &
 
-tint2 -c ~/.config/tint2/unleashed/unleashed-bookmark.tint2rc &
+#tint2 -c ~/.config/tint2/unleashed/unleashed-bookmark.tint2rc &
 ##tint2 -c ~/.config/tint2/unleashed/unleashed-clock.tint2rc &
-tint2 -c ~/.config/tint2/unleashed/unleashed-statusbar.tint2rc &
+#tint2 -c ~/.config/tint2/unleashed/unleashed-statusbar.tint2rc &
 tint2 -c ~/.config/tint2/unleashed/unleashed-taskbar.tint2rc &
+#polybar example &
+~/.config/polybar/launch.sh
 ##tint2 -c ~/.config/tint2/unleashed/unleashed-workspace.tint2rc &
 
 #xscreensaver -no-splash &

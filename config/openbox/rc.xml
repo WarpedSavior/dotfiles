@@ -244,6 +244,11 @@
         <desktop>yes</desktop>
       </action>
     </keybind>
+    <keybind key="W-Tab">
+      <action name="Execute">
+        <command>rofi -show window</command>
+      </action>
+    </keybind>
     <keybind key="W-S-Right">
       <action name="DirectionalCycleWindows"/>
     </keybind>
@@ -338,12 +343,12 @@
     </keybind>
     <keybind key="W-f">
       <action name="Execute">
-        <command>env GTK_THEME=Adwaita:light firefox-nightly</command>
+        <command>firefox</command>
       </action>
     </keybind>
     <keybind key="W-p">
       <action name="Execute">
-        <command>env GTK_THEME=Adwaita:light firefox-nightly --private-window</command>
+        <command>firefox --private-window</command>
       </action>
     </keybind>
     <keybind key="W-t">
@@ -376,13 +381,18 @@
         <command>mpc clear</command>
       </action>
     </keybind>
+    <keybind key="C-A-l">
+      <action name="Execute">
+        <command>lock</command>
+      </action>
+    </keybind>
     <keybind key="C-A-KP_7">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
         <y>0</y>
         <width>683</width>
-        <height>384</height>
+        <height>371</height>
       </action>
     </keybind>
     <keybind key="C-A-KP_5">
@@ -394,7 +404,7 @@
         <x>0</x>
         <y>0</y>
         <width>1366</width>
-        <height>384</height>
+        <height>371</height>
       </action>
     </keybind>
     <keybind key="C-A-KP_9">
@@ -403,7 +413,7 @@
         <x>683</x>
         <y>0</y>
         <width>683</width>
-        <height>384</height>
+        <height>371</height>
       </action>
     </keybind>
     <keybind key="C-A-KP_4">
@@ -412,7 +422,7 @@
         <x>0</x>
         <y>0</y>
         <width>683</width>
-        <height>768</height>
+        <height>743</height>
       </action>
     </keybind>
     <keybind key="C-A-KP_6">
@@ -421,34 +431,34 @@
         <x>683</x>
         <y>0</y>
         <width>683</width>
-        <height>768</height>
+        <height>743</height>
       </action>
     </keybind>
     <keybind key="C-A-KP_3">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>683</x>
-        <y>384</y>
+        <y>371</y>
         <width>683</width>
-        <height>384</height>
+        <height>371</height>
       </action>
     </keybind>
     <keybind key="C-A-KP_2">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
-        <y>384</y>
+        <y>371</y>
         <width>1366</width>
-        <height>384</height>
+        <height>371</height>
       </action>
     </keybind>
     <keybind key="C-A-KP_1">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
-        <y>384</y>
+        <y>371</y>
         <width>683</width>
-        <height>384</height>
+        <height>371</height>
       </action>
     </keybind>
   </keyboard>

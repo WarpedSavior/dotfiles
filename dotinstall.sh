@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc conkyrc profile Xresources config/dunst config/neofetch config/openbox config/tint2/unleashed config/compton.conf mpd/mpd.conf ncmpcpp/config scripts"    # list of files/folders to symlink in homedir
+files="bashrc conkyrc profile Xresources config/dunst config/neofetch config/openbox config/tint2/unleashed config/compton.conf mpd/mpd.conf ncmpcpp/config scripts config/polybar"    # list of files/folders to symlink in homedir
 
 ########## Dotfiles in home
 
@@ -16,6 +16,7 @@ files="bashrc conkyrc profile Xresources config/dunst config/neofetch config/ope
 mkdir -p ~/.config/tint2
 mkdir -p ~/.mpd
 mkdir -p ~/.ncmpcpp
+mkdir -p ~/.config/polybar
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
