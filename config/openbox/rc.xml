@@ -126,7 +126,7 @@
       <name>PYR</name>
       <name>AQA</name>
     </names>
-    <popupTime>875</popupTime>
+    <popupTime>275</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -196,22 +196,22 @@
         <to>next</to>
       </action>
     </keybind>
-    <keybind key="W-F1">
+    <keybind key="W-1">
       <action name="GoToDesktop">
         <to>1</to>
       </action>
     </keybind>
-    <keybind key="W-F2">
+    <keybind key="W-2">
       <action name="GoToDesktop">
         <to>2</to>
       </action>
     </keybind>
-    <keybind key="W-F3">
+    <keybind key="W-3">
       <action name="GoToDesktop">
         <to>3</to>
       </action>
     </keybind>
-    <keybind key="W-F4">
+    <keybind key="W-4">
       <action name="GoToDesktop">
         <to>4</to>
       </action>
@@ -219,7 +219,7 @@
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
-    <keybind key="A-F4">
+    <keybind key="W-S-q">
       <action name="Close"/>
     </keybind>
     <keybind key="A-Escape">
@@ -238,28 +238,30 @@
     <keybind key="A-S-Tab">
       <action name="PreviousWindow"/>
     </keybind>
-    <keybind key="C-A-Tab">
-      <action name="NextWindow">
-        <panels>yes</panels>
-        <desktop>yes</desktop>
-      </action>
-    </keybind>
     <keybind key="W-Tab">
       <action name="Execute">
         <command>rofi -show window</command>
       </action>
     </keybind>
     <keybind key="W-S-Right">
-      <action name="DirectionalCycleWindows"/>
+      <action name="DirectionalFocusEast">
+       <dialog>yes</dialog>
+     </action>
     </keybind>
     <keybind key="W-S-Left">
-      <action name="DirectionalCycleWindows"/>
+      <action name="DirectionalFocusWest">
+       <dialog>yes</dialog>
+     </action>
     </keybind>
     <keybind key="W-S-Up">
-      <action name="DirectionalCycleWindows"/>
+      <action name="DirectionalFocusNorth">
+       <dialog>yes</dialog>
+     </action>
     </keybind>
     <keybind key="W-S-Down">
-      <action name="DirectionalCycleWindows"/>
+      <action name="DirectionalFocusSouth">
+       <dialog>yes</dialog>
+     </action>
     </keybind>
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
@@ -383,7 +385,7 @@
     </keybind>
     <keybind key="C-A-l">
       <action name="Execute">
-        <command>lock</command>
+        <command>betterlockscreen -l blur</command>
       </action>
     </keybind>
     <keybind key="C-A-KP_7">
@@ -461,6 +463,41 @@
         <height>371</height>
       </action>
     </keybind>
+
+    <keybind key="W-C-Up">
+     <action name="MoveToEdgeNorth"/>
+   </keybind>
+   <keybind key="W-C-Down">
+     <action name="MoveToEdgeSouth"/>
+   </keybind>
+   <keybind key="W-C-Left">
+     <action name="MoveToEdgeWest"/>
+   </keybind>
+   <keybind key="W-C-Right">
+     <action name="MoveToEdgeEast"/>
+   </keybind>
+   <keybind key="W-S-Up">
+     <action name="UnmaximizeFull"/>
+     <action name="GrowToEdgeNorth"/>
+   </keybind>
+   <keybind key="W-S-Down">
+     <action name="UnmaximizeFull"/>
+     <action name="GrowToEdgeSouth"/>
+   </keybind>
+   <keybind key="W-S-Left">
+     <action name="UnmaximizeFull"/>
+     <action name="GrowToEdgeWest"/>
+   </keybind>
+   <keybind key="W-S-Right">
+     <action name="UnmaximizeFull"/>
+     <action name="GrowToEdgeEast"/>
+   </keybind>
+   <keybind key="W-Escape">
+     <action name="Iconify"/>
+   </keybind>
+   <keybind key="W-B">
+     <action name="ToggleDecorations"/>
+   </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>

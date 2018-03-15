@@ -20,7 +20,7 @@ alert = #bd2c40
 [bar/bar1]
 width = 455
 ;width = 911
-height = 25
+height = 20
 offset-x = 456
 offset-y = 0
 radius = 0
@@ -62,7 +62,7 @@ cursor-scroll = ns-resize
 
 [bar/bar2]
 width = 456
-height = 25
+height = 20
 offset-x = 911
 offset-y = 0
 radius = 0
@@ -88,8 +88,10 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=9;1
 font-3 = IPAMincho,IPA:pixelsize=10;1
 font-4 = IPAGothic,IPA:pixelsize=10;1
-font-5 = FontAwesome:pixelsize=10;1
-font-6 = Icons:pixelsize=10;2
+font-5 = Font Awesome 5 Free:style=Regular:pixelsize=10;1
+font-6 = Font Awesome 5 Free:style=Solid:pixelsize=10;1
+font-7 = Font Awesome 5 Brands:style=Regular:pixelsize=10;1
+font-8 = Icons:pixelsize=10;2
 
 ;modules-center = mpd
 ;modules-right = pkg weather battery bluetooth telegram pavolume wireless-network date
@@ -161,7 +163,6 @@ interval = 1.0
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
 ;date = %d-%m-%Y%
-date =
 
 ; Optional time format
 time = %H:%M:%S

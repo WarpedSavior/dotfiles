@@ -80,7 +80,7 @@ ${color4}└────────────────────┘     
 ${offset 15}${font Monospace:normal:size=10}${color6}User: ${color3}${execi 5000 whoami}${color4}${offset 9}────────────────────────────┬─┤
 ${offset 15}${font Monospace:normal:size=10}${color6}Distro: ${color3}${exec awk -F'=' '/DESCRIPTION/ {print $2}' /etc/lsb-release |sed 's/"//g'} ${machine}${color4}${offset 9}──────────┬─┘ │
 ${offset 15}${font Monospace:normal:size=10}${color6}Version: ${color3}${exec awk -F'=' '/DISTRIB_RELEASE=/ {printf $2" "} /CODENAME/ {print $2}' /etc/lsb-release}${color4}${offset 9}─────────────────┬┘   │                
-${offset 15}${font Monospace:normal:size=10}${color6}Kernel: ${color3}${kernel}${color4}${offset 9}───────────┬┘    │                
+${offset 15}${font Monospace:normal:size=10}${color6}Kernel: ${color3}${kernel}${color4}${offset 9} ───────────┬┘    │                
 ${offset 15}${font Monospace:normal:size=10}${color6}Uptime: ${color3}${uptime_short}${color4}${alignr}${offset 3}─────────────────┬┘     │ 
 ${offset 15}${font Monospace:normal:size=10}${color6}Date: ${color3}${time %a, %d de %b de %Y}${color4}${offset 9}───┬┘      │                       
 ${offset 15}${font Monospace:normal:size=10}${color6}Time: ${color3}${time %T}${color4}${offset 9}─────────────────┘       │                

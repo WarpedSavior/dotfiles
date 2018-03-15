@@ -40,7 +40,7 @@ function send_notification {
     fi
 
     # Send the notification
-    dunstify -t 8 -r 2593 -u normal -i $icon_name "$volume%  $bar"
+    dunstify -t 800 -r 2593 -u normal -i $icon_name "$volume%  $bar"
 }
 
 case $1 in
@@ -67,7 +67,7 @@ case $1 in
     	# Toggle mute
 	pactl set-sink-mute 0 toggle
 	if is_mute ; then
-	    dunstify -i audio-volume-muted -t 8 -r 2593 -u normal "Muted"
+	    dunstify -i audio-volume-muted -t 800 -r 2593 -u normal "Muted"
 	else
 	    send_notification
 	fi

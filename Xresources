@@ -84,11 +84,25 @@ URxvt*boldItalicFont:     	xft:monospace:regular:size=8
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 
-rofi.color-enabled: true
-rofi.color-window: #2f343f, #2f343f, #2f343f
-rofi.color-normal: #2f343f, #cacaca, #2f343f, #2f343f, #e3788f
-rofi.color-active: #2f343f, #93e5cc, #2f343f, #2f343f, #93e5cc
-rofi.color-urgent: #2f343f, #fcd49f, #2f343f, #2f343f, #fcd49f
+rofi.modi: run
+rofi.location: 1
+rofi.width: 100
+rofi.lines: 2
+rofi.line-margin: 0
+rofi.line-padding: 1
+rofi.separator-style: none
+rofi.font: mono 10
+rofi.columns: 9
+rofi.bw: 0
+!rofi.disable-history: false
+rofi.hide-scrollbar: true
+rofi.color-window: #222222, #222222, #b1b4b3
+rofi.color-normal: #222222, #b1b4b3, #222222, #005577, #b1b4b3
+rofi.color-active: #222222, #b1b4b3, #222222, #007763, #b1b4b3
+rofi.color-urgent: #222222, #b1b4b3, #222222, #77003d, #b1b4b3
+rofi.kb-row-select: Tab
+rofi.kb-row-tab: 
+
 
 ! ------------------------------------------------------------------------------
 ! XScreenSaver

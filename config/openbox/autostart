@@ -37,7 +37,8 @@ tint2 -c ~/.config/tint2/unleashed/unleashed-taskbar.tint2rc &
 ##tint2 -c ~/.config/tint2/unleashed/unleashed-workspace.tint2rc &
 
 #xscreensaver -no-splash &
-xautolock -time 10 -locker ~/.scripts/lock -detectsleep &
+#xautolock -time 10 -locker ~/.scripts/lock -detectsleep &
+xautolock -time 10 -locker "~/.scripts/betterlockscreen -l blur" -detectsleep &
 ~/.scripts/lightsOn.sh 590 &
 
 ~/.telegram/Telegram -startintray &

@@ -1,0 +1,26 @@
+
+betterlockscreen:
+https://github.com/pavanjadhaw/betterlockscreen
+
+# copy to dotfiles/scripts/
+
+lightson:
+https://github.com/iye/lightsOn
+
+# copy to dotfiles/scripts/
+
+
+lightsOn is not compatible with xautolock by default, so
+you may want to add this to # Detect screensaver:
+
+# add comp to xautolock
+screensaver=`pgrep -l xautolock | grep -wc xautolock`
+if [ $screensaver -ge 1 ]; then
+	screensaver=xautolock
+
+
+Also add this to delayScreensaver function
+
+# add comp to xautolock
+elif [ "$screensaver" == "xautolock" ]; then
+	xautolock -disable; xautolock -enable

@@ -8,7 +8,8 @@ Before=sleep.target
 User=%i
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/home/jos/.scripts/lock
+#ExecStart=/home/jos/.scripts/lock #old
+ExecStart=/usr/bin/xautolock -locknow
 ExecStartPost=/usr/bin/sleep 1
 
 [Install]

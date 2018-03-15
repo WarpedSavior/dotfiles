@@ -1,0 +1,6 @@
+#!/bin/bash
+#Add youtube music to current mpd playlist
+#Call this script like this: yt2mpd string
+#Where string is the id of the youtube link (after v=)
+
+mpc add $(youtube-dl --prefer-insecure -g -f140 $1)
